@@ -1,0 +1,27 @@
+---
+title: "My ggplot Theme"
+author: "Paloma Cartwright"
+date: "20/08/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(palmerpenguins)
+library(sharkypizza)
+library(pastadog)
+```
+
+```{r}
+ggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point(aes(color = species), 
+             shape = 20, 
+             size = 2) +
+  labs(x = "Flipper Length (mm)", 
+       y = "Body Mass (g)", 
+       title = "Body Mass vs Flipper Length of Penguin Species", 
+       color = "Species") + 
+  theme_bluepink() # My theme that I created
+```
+
